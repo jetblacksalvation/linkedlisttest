@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <tuple>
 #define get_iter(id, index) *(id.begin()+index)
 
@@ -8,7 +9,7 @@ using _Init_Trains = std::initializer_list<_One_Value>;
 
 //g++ test.cpp; ./a.exe
 
-
+char * t = (char*)"faf";
 class TrainList  {
     private:
     struct TrainNode{
@@ -53,10 +54,10 @@ class TrainList  {
     void push_back(_One_Value val){
         TrainNode *ptr = head;
 
-        while(ptr !=NULL){
+        while(ptr->next !=NULL){
             ptr = ptr->next;
         }
-        ptr = new TrainNode(NULL, val);
+        ptr->next = new TrainNode(NULL, val);
     }
     void honk(int index){
         TrainNode *ptr = head;
@@ -71,6 +72,7 @@ class TrainList  {
 
 
 int main(void){
+    auto v = std::stoi(t);
     TrainList trains({{"hello ", "hello2", " 100/200 ", true}, {"fda", "fdsa"," 20/20 ", false}});
 
     char buff;
@@ -93,7 +95,7 @@ int main(void){
         if(buff == 'i'){
             fgets(temp,10,stdin);
 
-            trains.push_back({temp, temp2, temp3, bool(( getc(stdin) == '1') ? true : false)});
+            trains.push_back({(fgets(temp, 10, stdin) != NULL? temp : temp), (fgets(temp, 10, stdin) != NULL? temp : temp), (fgets(temp, 10, stdin) != NULL? temp : temp), bool(( getc(stdin) == '1') ? true : false)});
 
         }
         if (buff == 'p'){
