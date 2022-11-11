@@ -94,7 +94,7 @@ int main(void){
         if(buff == 'i'){
             fgets(temp,10,stdin);
 
-            trains.push_back({(fgets(temp, 10, stdin) != NULL? temp : temp), (fgets(temp, 10, stdin) != NULL? temp : temp), (fgets(temp, 10, stdin) != NULL? temp : temp), bool(( getc(stdin) == '1') ? true : false)});
+            trains.push_back({(fgets(temp, 10, stdin) != NULL? temp : temp), (fgets(temp2, 10, stdin) != NULL? temp2 : temp), (fgets(temp3, 10, stdin) != NULL? temp3 : temp), bool(( getc(stdin) == '1') ? true : false)});
 
         }
         if (buff == 'p'){
