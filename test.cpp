@@ -72,7 +72,6 @@ class TrainList  {
 
 
 int main(void){
-    auto v = std::stoi(t);
     TrainList trains({{"hello ", "hello2", " 100/200 ", true}, {"fda", "fdsa"," 20/20 ", false}});
 
     char buff;
